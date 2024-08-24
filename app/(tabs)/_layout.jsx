@@ -12,7 +12,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
                 tintColor={color}
                 className="w-5 h-5"
             />
-            <Text class={`${focused ? 'font-psemibold' : 'font-pregular'}`}>
+            <Text class={`${focused ? 'font-psemibold' : 'font-pregular'}`} style={{ color: color }}>
                 {name}
             </Text>
         </View>
@@ -24,7 +24,14 @@ const TabsLayout = () => {
     <Tabs
         screenOptions={{
             tabBarShowLabel: false,
-            tabBarActiveTintColor: '#FFA001'
+            tabBarActiveTintColor: '#FFA001',
+            tabBarInactiveTintColor: '#CDCDE0',
+            tabBarStyle: {
+                backgroundColor: '#161522',
+                borderTopWidth: 1,
+                borderTopColor: '#232533',
+                height: 84,
+            }
         }}
     >
         <Tabs.Screen 

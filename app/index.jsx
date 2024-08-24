@@ -29,11 +29,14 @@ export default function App() {
 
             <Image 
               source={images.path}
-              className="w-[136px] h-[15px] absolute -bottom-1 right-[-25px]"
+              className="w-[136px] h-[15px] absolute -bottom-[6px] right-[-35px]"
               resizeMode="contain"
             />
-
           </View>
+
+          <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
+            Where creativity meets innovation: embark on a journey of limitless with Aora
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>

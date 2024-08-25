@@ -10,21 +10,25 @@ const SignIn = () => {
     email: '',
     password: ''
   })
-
+  
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
         <View className="w-full justify-center h-full px-4 my-6">
+
+          {/* Aora Logo for the login page */}
           <Image 
             source={images.logo}
             resizeMode='conn'
             className="w-[115px] h-[35px]"
           />
 
+          {/* Text area for log in */}
           <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
             Log in to Aora
           </Text>
 
+          {/* Form field for email */}
           <FormField 
             title="Email"
             value={form.email}
@@ -32,6 +36,15 @@ const SignIn = () => {
             otherStyles="mt-7"
             keyboardType="email-address"
           />
+
+          {/* Form field for password */}
+          <FormField 
+            title="Password"
+            value={form.password}
+            handleChangeText={(e) => setform({...form, password: e})}
+            otherStyles="mt-7"
+          />
+
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -8,6 +8,8 @@ import { useState } from 'react';
 import CustomButton from '../../components/CustomButton'
 import { Link } from 'expo-router';
 
+import { createUser } from '../../lib/appwrite'
+
 const SignIn = () => {
   const [form, setform] = useState({
     email: '',
@@ -17,7 +19,7 @@ const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const submit = () => {
-
+    createUser();
   }
 
   return (

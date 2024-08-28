@@ -12,6 +12,7 @@ const Trending = ({ posts }) => {
             {item.id}
             </Text>
         )}
+        horizontal
     />
 
   )

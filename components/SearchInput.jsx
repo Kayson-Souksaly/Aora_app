@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Image, TouchableOpacity, Alert } from 'react-native'
+import { View, TextInput, Image, TouchableOpacity, Alert } from 'react-native'
 import { useState } from 'react'
 
 import { icons } from '../constants';
@@ -30,7 +30,7 @@ const SearchInput = ({ initialQuery }) => {
         >
             <Image 
                 source={icons.search}
-                className="h-5 w-5"
+                className="h-5 w-5 m-1"
                 resizeMode='contain'
             />
         </TouchableOpacity>

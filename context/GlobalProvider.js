@@ -12,22 +12,22 @@ const GlobalProvider = ({ children }) => {
 
     useEffect(() => {
         getCurrentUser()
-            .then((res) => {
-                if(res) {
-                    setIsLoggedIn(true);
-                    setUser(res);
-                } else {
-                    setIsLoggedIn(false);
-                    setUser(null);
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setIsLoading(false);
-            })
-    }, [])
+          .then((res) => {
+            if (res) {
+              setIsLoggedIn(true);
+              setUser(res);
+            } else {
+              setIsLoggedIn(false);
+              setUser(null);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }, []);
     
 
     return (

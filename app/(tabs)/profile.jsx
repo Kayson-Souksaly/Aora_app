@@ -3,19 +3,24 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import EmptyState from '../../components/EmptyState'
 import VideoCard from '../../components/VideoCard'
-import { getUserPosts } from '../../lib/appwrite'
+import { getUserPosts, signOut } from '../../lib/appwrite'
 import useAppwrite from '../../lib/useAppwrite'
 
 import { useGlobalContext } from '../../context/GlobalProvider'
 import { icons } from '../../constants'
 import InfoBox from '../../components/InfoBox'
 
+import { router } from 'expo-router'
 const Profile = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();
   const { data: posts } = useAppwrite(() => getUserPosts(user.$id));
 
-  const logout = () => {
+  const logout = async () => {
+    await signOut();
+    setUser(null);
+    setIsLoggedIn(false);
 
+    router.replace('/sign-in');
   }
 
   return (
@@ -59,7 +64,7 @@ const Profile = () => {
               <InfoBox
                 title={posts.length || 0}
                 subtitle="Posts"
-                containerStyles="mt-10"
+                containerStyles="mr-10"
                 titleStyles="text-xl"
               />
               <InfoBox
